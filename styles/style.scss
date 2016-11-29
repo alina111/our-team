@@ -1,0 +1,272 @@
+@import 'normalize.css';
+@import 'layout';
+@import 'fonts';
+
+$text-color: #333;
+$brand-color: #ffcc00;
+$secondary-text-color: #898f8f;
+$additional-text-color: #666;
+$socials-text-color: #ccc;
+@mixin title-font {
+	font-family: "Roboto", sans-serif;
+	font-weight: 900;
+}
+
+@mixin text-font {
+	font-family: "Raleway", sans-serif;
+	font-weight: 500;
+}
+
+
+
+body {
+	padding: 110px 0 90px;
+	color: $text-color;
+}
+.ba-header {
+	padding-bottom: 35px;
+}
+.ba-sub-title,
+.ba-title {
+	line-height: 1;
+	margin: 0;
+}
+.ba-sub-title {
+	@include text-font;
+	color: $secondary-text-color;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.ba-title {
+	@include title-font;
+	color: $brand-color;
+	text-transform: uppercase;
+	font-size: 60px;
+	padding-top: 20px;
+}
+
+.ba-divider {
+	width: 35px;
+	height: 19px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		width: 200px;
+		height: 1px;
+		top: 50%;
+		background-color: $brand-color;
+		transform: translateY(-50%);
+	}
+	&:before {
+		right: 100%;
+	}
+	&:after {
+		left: 100%;
+	}
+}
+
+.ba-slider {
+	margin-top: 40px;
+	.ba-column-6 {
+		padding: 75px 0;
+		&:first-child {
+			border-right: 1px solid $brand-color;
+		}
+	}
+	&__indicators {
+		padding-left: 0;
+	}
+}
+.ba-indicators {
+	margin-top: 40px;
+	&__item + .ba-indicators__item {
+		margin-left: 10px;
+	}
+}
+
+.ba-slider {
+
+	position: relative;
+	&__arrow {
+		position: absolute;
+		top: 50%;
+		width: 10px;
+		height: 10px;
+		transform: translateY(-50%, -50%);
+		background-color: #fff;
+		border: none;
+		color: $brand-color;
+		&:hover {
+		cursor: pointer;
+		}
+		&--left {
+			left: 0;
+		}
+		&--right {
+			right: 0;
+		}
+	}
+	&__image {
+		padding: 15px;
+		position: relative;
+		margin: 0 auto;
+		width: 80%;
+		text-align: center;
+		$corner-size: 100px;
+		.ba-corner {
+			position: absolute;
+			width: $corner-size;
+			height: $corner-size;
+			border-width: 1px;
+			border-color: $brand-color;
+			&--tl {
+				top: 0;
+				left: 0;
+				border-left-style: solid;
+				border-top-style: solid;
+			}
+			&--tr {
+				top: 0;
+				right: 0;
+				border-top-style: solid;
+				border-right-style: solid;
+			}
+			&--br {
+				bottom: 0;
+				right: 0;
+				border-bottom-style: solid;
+				border-right-style: solid;
+			}
+			&--bl {
+				bottom: 0;
+				left: 0;
+				border-bottom-style: solid;
+				border-left-style: solid;
+			}
+		}
+		img {
+			border: 1px solid $brand-color;
+			width: 100%;
+		}
+	}
+}
+.ba-team__description {
+	color: $additional-text-color;
+	.ba-team__name {
+		@include  title-font;
+		font-size: 36px;
+		position: relative;
+		&:after {
+			content: '';
+			width: 100px;
+			height: 1px;
+			background-color: $brand-color;
+			top: 130%;
+			position: absolute;
+			right: 41%;
+		}
+	}
+}
+.ba-team {
+	&__position {
+		@include text-font;
+		font-size: 24px;
+		line-height: 1.41;
+		text-transform: capitalize;
+	}
+	&__biography {
+		font-size: 14px;
+		line-height: 1.7;
+		width: 70%;
+		margin: 0 auto 25px;
+	}
+	&__link {
+		width: 120px;
+		height: 25px;
+		border: 1px solid  $brand-color;
+		background-color: #FFF;
+		font-family: Open Sans;
+		font-size: 14px;
+		color: $additional-text-color;
+		text-transform: uppercase;
+		&:hover {
+			border-color: darken($brand-color, 50%);
+			cursor: pointer;
+		}
+	}
+}
+.ba-socials {
+	list-style-type: none;
+
+	&__item {
+		display: inline-block;
+		border-radius: 50%;
+		border: 3px solid $socials-text-color;
+		width: 35px;
+		height: 35px;
+		position: relative;
+		&:hover {
+			border-color: darken($socials-text-color, 50%);
+		}
+		i {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: $socials-text-color;
+			padding: 5px;
+			&:hover {
+				color: darken($socials-text-color, 50%);
+			}
+		}
+	}
+}
+.ba-separator {
+	height: 5px;
+	width: 20px;
+	background-color: $brand-color;
+	position: relative;
+	margin: 0 auto 25px;
+	&:after, &:before {
+		content: "";
+		position: absolute;
+		height: 5px;
+		width: 10px;
+		background-color: $brand-color;
+	}
+	&:after {
+		left: 30px;
+	}
+	&:before {
+		right: 30px;
+	}
+}
+
+.ba-indicators {
+	position: relative;
+	list-style-type: none;
+	font-size: 0;
+	// transform: translateX(-50%, -50%);
+	&__item {
+		display: inline-block;
+
+
+
+
+	}
+	&__button {
+		background-color: $brand-color;
+		border: 1px solid $brand-color;
+		outline: none;
+		width: 11px;
+		height: 11px;
+		border-radius: 50%;
+		&--active {
+			background-color: #FFF;
+		}
+	}
+}

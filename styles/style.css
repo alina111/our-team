@@ -1,0 +1,422 @@
+@import url(normalize.css);
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -box-sizing: border-box;
+}
+
+/* use this class for block that has child floated elements */
+.ba-clearfix:before,
+.ba-clearfix:after {
+  content: '';
+  display: table;
+}
+
+.ba-clearfix:after {
+  clear: both;
+}
+
+/* for IE 6/7 */
+.ba-clearfix {
+  *zoom: 1;
+}
+
+/* classes for text */
+.ba-text-center {
+  text-align: center;
+}
+
+.ba-text-left {
+  text-align: left;
+}
+
+.ba-text-right {
+  text-align: right;
+}
+
+.ba-text-justify {
+  text-align: justify;
+}
+
+/* layout classes */
+.ba-container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.ba-float-left {
+  float: left;
+}
+
+.ba-float-right {
+  float: right;
+}
+
+/* ba-grid  definition*/
+[class*="ba-column-"] {
+  float: left;
+}
+
+.ba-column-12 {
+  width: 100%;
+}
+
+.ba-column-11 {
+  width: 91.667%;
+}
+
+.ba-column-10 {
+  width: 83.334%;
+}
+
+.ba-column-9 {
+  width: 75%;
+}
+
+.ba-column-8 {
+  width: 66.667%;
+}
+
+.ba-column-7 {
+  width: 58.33333333%;
+}
+
+.ba-column-6 {
+  width: 50%;
+}
+
+.ba-column-5 {
+  width: 41.66666667%;
+}
+
+.ba-column-4 {
+  width: 33.334%;
+}
+
+.ba-column-3 {
+  width: 25%;
+}
+
+.ba-column-2 {
+  width: 16.667%;
+}
+
+.ba-column-1 {
+  width: 8.334%;
+}
+
+.ba-grid:before,
+.ba-grid:after {
+  content: '';
+  display: table;
+}
+
+.ba-grid:after {
+  clear: both;
+}
+
+/* for IE 6/7 */
+.ba-grid {
+  *zoom: 1;
+}
+
+.ba-grid > [class*="ba-column-"] {
+  padding: 0 15px;
+}
+
+.ba-grid {
+  margin: 0 -15px;
+}
+
+.ba-grid + .ba-grid {
+  margin-top: 30px;
+}
+
+body {
+  padding: 110px 0 90px;
+  color: #333;
+}
+
+.ba-header {
+  padding-bottom: 35px;
+}
+
+.ba-sub-title,
+.ba-title {
+  line-height: 1;
+  margin: 0;
+}
+
+.ba-sub-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  color: #898f8f;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.ba-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: #ffcc00;
+  text-transform: uppercase;
+  font-size: 60px;
+  padding-top: 20px;
+}
+
+.ba-divider {
+  width: 35px;
+  height: 19px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.ba-divider:before, .ba-divider:after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 1px;
+  top: 50%;
+  background-color: #ffcc00;
+  transform: translateY(-50%);
+}
+
+.ba-divider:before {
+  right: 100%;
+}
+
+.ba-divider:after {
+  left: 100%;
+}
+
+.ba-slider {
+  margin-top: 40px;
+}
+
+.ba-slider .ba-column-6 {
+  padding: 75px 0;
+}
+
+.ba-slider .ba-column-6:first-child {
+  border-right: 1px solid #ffcc00;
+}
+
+.ba-slider__indicators {
+  padding-left: 0;
+}
+
+.ba-indicators {
+  margin-top: 40px;
+}
+
+.ba-indicators__item + .ba-indicators__item {
+  margin-left: 10px;
+}
+
+.ba-slider {
+  position: relative;
+}
+
+.ba-slider__arrow {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%, -50%);
+  background-color: #fff;
+  border: none;
+  color: #ffcc00;
+}
+
+.ba-slider__arrow:hover {
+  cursor: pointer;
+}
+
+.ba-slider__arrow--left {
+  left: 0;
+}
+
+.ba-slider__arrow--right {
+  right: 0;
+}
+
+.ba-slider__image {
+  padding: 15px;
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+.ba-slider__image .ba-corner {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-width: 1px;
+  border-color: #ffcc00;
+}
+
+.ba-slider__image .ba-corner--tl {
+  top: 0;
+  left: 0;
+  border-left-style: solid;
+  border-top-style: solid;
+}
+
+.ba-slider__image .ba-corner--tr {
+  top: 0;
+  right: 0;
+  border-top-style: solid;
+  border-right-style: solid;
+}
+
+.ba-slider__image .ba-corner--br {
+  bottom: 0;
+  right: 0;
+  border-bottom-style: solid;
+  border-right-style: solid;
+}
+
+.ba-slider__image .ba-corner--bl {
+  bottom: 0;
+  left: 0;
+  border-bottom-style: solid;
+  border-left-style: solid;
+}
+
+.ba-slider__image img {
+  border: 1px solid #ffcc00;
+  width: 100%;
+}
+
+.ba-team__description {
+  color: #666;
+}
+
+.ba-team__description .ba-team__name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  position: relative;
+}
+
+.ba-team__description .ba-team__name:after {
+  content: '';
+  width: 100px;
+  height: 1px;
+  background-color: #ffcc00;
+  top: 130%;
+  position: absolute;
+  right: 41%;
+}
+
+.ba-team__position {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.41;
+  text-transform: capitalize;
+}
+
+.ba-team__biography {
+  font-size: 14px;
+  line-height: 1.7;
+  width: 70%;
+  margin: 0 auto 25px;
+}
+
+.ba-team__link {
+  width: 120px;
+  height: 25px;
+  border: 1px solid #ffcc00;
+  background-color: #FFF;
+  font-family: Open Sans;
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.ba-team__link:hover {
+  border-color: black;
+  cursor: pointer;
+}
+
+.ba-socials {
+  list-style-type: none;
+}
+
+.ba-socials__item {
+  display: inline-block;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  width: 35px;
+  height: 35px;
+  position: relative;
+}
+
+.ba-socials__item:hover {
+  border-color: #4d4d4d;
+}
+
+.ba-socials__item i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ccc;
+  padding: 5px;
+}
+
+.ba-socials__item i:hover {
+  color: #4d4d4d;
+}
+
+.ba-separator {
+  height: 5px;
+  width: 20px;
+  background-color: #ffcc00;
+  position: relative;
+  margin: 0 auto 25px;
+}
+
+.ba-separator:after, .ba-separator:before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 10px;
+  background-color: #ffcc00;
+}
+
+.ba-separator:after {
+  left: 30px;
+}
+
+.ba-separator:before {
+  right: 30px;
+}
+
+.ba-indicators {
+  position: relative;
+  list-style-type: none;
+  font-size: 0;
+}
+
+.ba-indicators__item {
+  display: inline-block;
+}
+
+.ba-indicators__button {
+  background-color: #ffcc00;
+  border: 1px solid #ffcc00;
+  outline: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.ba-indicators__button--active {
+  background-color: #FFF;
+}
